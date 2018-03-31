@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+  
+    <% include ../../../public/views/partials/header %>
+  
+  <title>Friends</title>
+</head>
+
+<body>
+
+    <a href="profil" class="btn btn-lg btn-primary btn-block" onclick="">Retour au profil</a><br>
+
+    <div class="container">
+ 
+    <h3>Utilisateurs non suivie</h3>
+    <% users.forEach(function(user) {%>
+      <br>Profil :
+      <a href="/friend/<%=user._id %>" onclick=""><%=user.local.username %></a>
+      <% });%>
+
+    <h3> Utilisateur deja suivie</h3>
+    <% unusers.forEach(function(user) {%>
+      <br>Profil :
+      <a href="/unfriend/<%=user._id %>" onclick=""><%=user.local.username %></a>
+    <% });%>
+  </div>
+  <br>
+  <br>
+  <a class="btn btn-lg btn-primary btn-block" href="/logout">Se déconnecter</a>
+
+      
+      
+  
+   
+</body>
+</html>

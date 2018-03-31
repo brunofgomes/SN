@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+  
+
+  <% include ../../../public/views/partials/header %>
+</head>
+<body>
+  <div>
+      <div>
+          <div>
+            <h4>Votre profil :</h4>
+            <%= nom %>
+          </div>
+
+          <div>
+            <div>
+              <a href="/friend" class="btn btn-lg btn-primary btn-block">Autres utilisateurs</a>
+              <a href="/post" class="btn btn-lg btn-primary btn-block">ajouter un post</a>
+            </div>
+          <div>
+            <h3>Les posts :</h3>
+            <br>
+            <% posts.forEach(function(post){ %>
+              <br>
+              <%=post.title %>
+              <br>
+              <%=post.description %>
+              <br>
+              <br>
+              <h4>Auteur :</h4>
+              <%=post.user.local.username%>
+              <br>
+              <br>
+              <h4>Date de publication</h4>
+              <%=post.createdAt%>
+              <br>
+              <br>
+              
+            <%});%>
+            </div>
+            <a  href="/logout" class="btn btn-lg btn-primary btn-block">Se déconnecter</a>
+        </div>
+      </div>
+  </div>
+</body>
+</html>
